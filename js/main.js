@@ -1,33 +1,62 @@
+// Objeto con categorías de edad y sus rangos
+const categorias = {
+  1: "Niño",
+  2: "Niño viejo",
+  3: "Adolescente",
+  4: "Joven",
+  5: "Adulto",
+  6: "Viejito pero caliente",
+  7: "Viejito ya no tan caliente",
+};
+
+// Función para obtener los años y meses de diferencia entre dos fechas
+function obtenerEdad(fechaNacimiento, fechaActual) {
+  let años = fechaActual.getUTCFullYear() - fechaNacimiento.getUTCFullYear();
+  let meses = fechaActual.getUTCMonth() - fechaNacimiento.getUTCMonth();
+
+  // Calcular la edad en meses
+  if (meses < 0) {
+    años--;
+    meses += 12;
+  }
+
+  return { años, meses };
+}
+
+// Función para calcular la edad en días
 function calcularEdad() {
-    let nombre = prompt("Ingresa tu nombre");
-    let edad = prompt("Ingresa tu edad");
-    let categoria;
-    let dias = edad * 365;
+  let nombre = prompt("Ingresa tu nombre");
+  let fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM-DD)");
 
-    if (edad >= 1 && edad <= 6) {
-        categoria = "Niño";
-    } else if (edad >= 7 && edad <= 12) {
-        categoria = "Joven";
-    } else if (edad >= 13 && edad <= 18) {
-        categoria = "Adolecente";
-    } else if (edad >= 19 && edad <= 26) {
-        categoria = "Joven";
-    } else if (edad >= 27 && edad <= 55) {
-        categoria = "Adulto";
-    } else if (edad >= 56 && edad <= 85) {
-        categoria = "Viejito pero caliente";
-    } else if (edad >= 86 && edad <= 124) {
-        categoria = "Viejito ya no tan";
-    } else {
-        categoria = "Edad no válida";
-    }
+  let fechaNacimientoObj = new Date(fechaNacimiento);
+  let fechaActual = new Date();
 
-    while (edad > 125){
-        alert("En la actualidad no hay personas tan longevas");
-        edad = prompt("Ingrese una edad menor");
-    }
-    
-    alert("Hola: " + nombre + "\nTu edad en días es: " + dias + "\nTu categoría es: " + categoria);
+  let { años, meses } = obtenerEdad(fechaNacimientoObj, fechaActual);
 
+  let categoria;
+  if (años >= 1 && años <= 6) {
+    categoria = categorias[1];
+  } else if (años >= 7 && años <= 12) {
+    categoria = categorias[2];
+  } else if (años >= 13 && años <= 18) {
+    categoria = categorias[3];
+  } else if (años >= 19 && años <= 26) {
+    categoria = categorias[4];
+  } else if (años >= 27 && años <= 55) {
+    categoria = categorias[5];
+  } else if (años >= 56 && años <= 85) {
+    categoria = categorias[6];
+  } else if (años >= 86 && años <= 124) {
+    categoria = categorias[7];
+  } else {
+    categoria = "Edad no válida";
+  }
+
+  // Mostrar los resultados en un alert y en la consola
+  alert("Hola: " + nombre + "\nTu edad en años es: " + años + "\nTu edad en meses es: " + meses + "\nTu categoría es: " + categoria);
+  console.log("Nombre:", nombre);
+  console.log("Edad en años:", años);
+  console.log("Edad en meses:", meses);
+  console.log("Categoría:", categoria);
 }
 calcularEdad();
