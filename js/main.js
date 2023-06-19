@@ -1,12 +1,96 @@
 // Objeto con categorías de edad y sus rangos
 const categorias = {
-  1: "Niño",
-  2: "Niño viejo",
-  3: "Adolescente",
-  4: "Joven",
-  5: "Adulto",
-  6: "Viejito pero caliente",
-  7: "Viejito ya no tan caliente",
+  1: {
+    nombre: "Niño",
+    juegos: [
+      {
+        nombre: "Candy Land",
+        imagen: "https://example.com/candy-land.jpg"
+      },
+      {
+        nombre: "Jenga",
+        imagen: "https://example.com/jenga.jpg"
+      }
+    ]
+  },
+  2: {
+    nombre: "Niño Viejo",
+    juegos: [
+      {
+        nombre: "Catan",
+        imagen: "https://example.com/catan.jpg"
+      },
+      {
+        nombre: "Ticket to Ride",
+        imagen: "https://example.com/ticket-to-ride.jpg"
+      }
+    ]
+  },
+  3: {
+    nombre: "Joven",
+    juegos: [
+      {
+        nombre: "Risk",
+        imagen: "https://example.com/risk.jpg"
+      },
+      {
+        nombre: "Codenames",
+        imagen: "https://example.com/codenames.jpg"
+      }
+    ]
+  },
+  4: {
+    nombre: "Adolecente",
+    juegos: [
+      {
+        nombre: "Azul",
+        imagen: "https://example.com/azul.jpg"
+      },
+      {
+        nombre: "Splendor",
+        imagen: "https://example.com/splendor.jpg"
+      }
+    ]
+  },
+  5: {
+    nombre: "Adulto",
+    juegos: [
+      {
+        nombre: "Carcassonne",
+        imagen: "https://example.com/carcassonne.jpg"
+      },
+      {
+        nombre: "Pandemic",
+        imagen: "https://example.com/pandemic.jpg"
+      }
+    ]
+  },
+  6: {
+    nombre: "Viejito pero caliente",
+    juegos: [
+      {
+        nombre: "Dominó",
+        imagen: "https://example.com/domino.jpg"
+      },
+      {
+        nombre: "Póker",
+        imagen: "https://example.com/poker.jpg"
+      }
+    ]
+  },
+  7: {
+    nombre: "Viejito ya no tan caliente",
+    juegos: [
+      {
+        nombre: "Ajedrez",
+        imagen: "https://example.com/ajedrez.jpg"
+      },
+      {
+        nombre: "Sudoku",
+        imagen: "https://example.com/sudoku.jpg"
+      }
+    ]
+  }
 };
 
 // Función para obtener los años y meses de diferencia entre dos fechas
@@ -14,7 +98,7 @@ function obtenerEdad(fechaNacimiento, fechaActual) {
   let años = fechaActual.getUTCFullYear() - fechaNacimiento.getUTCFullYear();
   let meses = fechaActual.getUTCMonth() - fechaNacimiento.getUTCMonth();
 
-  // Calcular la edad en meses
+// Si la diferencia en meses es negativa, se resta 1 año y se ajusta el valor de los meses
   if (meses < 0) {
     años--;
     meses += 12;
@@ -23,40 +107,76 @@ function obtenerEdad(fechaNacimiento, fechaActual) {
   return { años, meses };
 }
 
-// Función para calcular la edad en días
-function calcularEdad() {
-  let nombre = prompt("Ingresa tu nombre");
-  let fechaNacimiento = prompt("Ingresa tu fecha de nacimiento (formato: AAAA-MM-DD)");
+// Función para mostrar las sugerencias de juegos de mesa en el DOM
+function mostrarSugerencias(categoria) {
+  let juegosContainer = document.getElementById("juegos");
+  juegosContainer.innerHTML = "";
 
+  let juegos = categorias[categoria].juegos;
+
+  for (let i = 0; i < juegos.length; i++) {
+    let juego = juegos[i];
+
+    let juegoCard = document.createElement("div");
+    juegoCard.classList.add("card", "mb-3", "mx-auto");
+    juegoCard.style = "max-width: 18rem;";
+
+    let imagen = document.createElement("img");
+    imagen.src = juego.imagen;
+    imagen.classList.add("card-img-top");
+
+    let juegoCardBody = document.createElement("div");
+    juegoCardBody.classList.add("card-body");
+
+    let juegoTitle = document.createElement("h5");
+    juegoTitle.classList.add("card-title");
+    juegoTitle.textContent = juego.nombre;
+
+    juegoCardBody.appendChild(juegoTitle);
+    juegoCard.appendChild(imagen);
+    juegoCard.appendChild(juegoCardBody);
+
+    juegosContainer.appendChild(juegoCard);
+  }
+}
+
+// Función para calcular la edad en días y mostrar los resultados en el DOM
+function calcularEdad() {
+  let nombre = document.getElementById("nombre").value;
+  let fechaNacimiento = document.getElementById("fechaNacimiento").value;
+
+  // Guardar nombre y fecha de nacimiento en el localStorage
+  localStorage.setItem("nombre", nombre);
+  localStorage.setItem("fechaNacimiento", fechaNacimiento);
+
+  // Convertir la fecha de nacimiento en objeto Date
   let fechaNacimientoObj = new Date(fechaNacimiento);
   let fechaActual = new Date();
 
+  // Calcular la edad en años y meses usando la función personalizada
   let { años, meses } = obtenerEdad(fechaNacimientoObj, fechaActual);
 
-  let categoria;
-  if (años >= 1 && años <= 6) {
-    categoria = categorias[1];
-  } else if (años >= 7 && años <= 12) {
-    categoria = categorias[2];
-  } else if (años >= 13 && años <= 18) {
-    categoria = categorias[3];
-  } else if (años >= 19 && años <= 26) {
-    categoria = categorias[4];
-  } else if (años >= 27 && años <= 55) {
-    categoria = categorias[5];
-  } else if (años >= 56 && años <= 85) {
-    categoria = categorias[6];
-  } else if (años >= 86 && años <= 124) {
-    categoria = categorias[7];
-  } else {
-    categoria = "Edad no válida";
-  }
+  // Obtener la categoría según los años de edad
+  let categoria = Math.floor(años / 10) + 1;
 
-  // Mostrar los resultados en un alert y en la consola
-  alert("Hola: " + nombre + "\nTu edad en años es: " + años + "\nTu edad en meses es: " + meses + "\nTu categoría es: " + categoria);
-  console.log("Nombre:", nombre);
-  console.log("Edad en años:", años);
-  console.log("Edad en meses:", meses);
-  console.log("Categoría:", categoria);
+  // Mostrar los resultados en el DOM
+  let resultadoContainer = document.getElementById("resultado");
+  resultadoContainer.innerHTML = `
+    <p>Hola ${nombre}</p>
+    <p>Tu edad en años es: ${años}</p>
+    <p>Tu edad en meses es: ${meses}</p>
+    <p>Tu categoría es: ${categorias[categoria].nombre}</p>
+  `;
+
+// Obtener nombre y fecha de nacimiento del localStorage
+  let nombreGuardado = localStorage.getItem("nombre");
+  let fechaNacimientoGuardada = localStorage.getItem("fechaNacimiento");
+
+// Hacer algo con los datos recuperados del localStorage
+  console.log("Nombre guardado:", nombreGuardado);
+  console.log("Fecha de nacimiento guardada:", fechaNacimientoGuardada);
+
+
+// Mostrar sugerencias de juegos de mesa
+  mostrarSugerencias(categoria);
 }
-calcularEdad();
