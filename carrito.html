@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Board Games es un portal dedicado a juegos de mesa modernos, juegos de mesa, que son los juegos de mesa y beneficios de jugar juegos de mesa">
+    <meta name="keywords" content="Conoce los juegos de mesa modernos, sabes que son los juegos de mesa, beneficios de los juegos de mesa modernos, juegos de mesa mejoran la concentrarcion, juegos de mesa enseñan a respetar normas, juegos de mesa desarrollan capacidades intelectuales, juegos de mesa fomentan el trabajo en grupo.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#" title="Logo">
+                    <img src="./images/logo.png" alt="" width="60" height="40">
+                </a>                
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">                        
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Nuevo Texto" aria-label="Search">
+                        <a class="btn btn-outline-success" href="index.html">Inicio</a>
+                        <a class="btn btn-outline-success" href="carrito.html">Carrito</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="mt-4">Carrito de compras</h1>
+        <ul id="carrito" class="list-group mt-4"></ul>
+        <ul id="listaCarrito"></ul>
+        <div id="carritoContainer"></div>
+        <div class="mt-4">
+            <button onclick="vaciarCarrito()" class="btn btn-danger">Vaciar Carrito</button>
+        </div>
+    </div>
+    
+    
+    <script src="js/carrito.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

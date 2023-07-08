@@ -1,0 +1,134 @@
+[
+    {
+        "nombre": "Candy Land",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Niño",
+        "jugadores": "2-4",
+        "edad_minima": 3,
+        "tiempo_partida": "30 minutos",
+        "descripcion": "Candy Land es un juego de mesa clásico en el que los jugadores deben recorrer un camino de colores mientras recolectan dulces. Es perfecto para niños pequeños."
+    },
+    {
+        "nombre": "Jenga",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Niño",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Catan",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Niño Viejo",
+        "jugadores": "1+",
+        "edad_minima": 9,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Ticket to Ride",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Niño Viejo",
+        "jugadores": "1+",
+        "edad_minima": 9,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Risk",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Joven",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Codename",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Joven",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Azul",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Adolecente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Splendor",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Adolecente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Clank",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Adulto",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Carcassonne",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Adulto",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Wingspan",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Viejito pero caliente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Dune Imperium",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Viejito pero caliente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+
+    {
+        "nombre": "Ark Nova",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Viejito pero ya no tan caliente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    },
+    {
+        "nombre": "Bingo",
+        "imagen": "./images/catan.jpg",
+        "categoria": "Viejito pero ya no tan caliente",
+        "jugadores": "1+",
+        "edad_minima": 6,
+        "tiempo_partida": "15 minutos",
+        "descripcion": "Jenga es un juego de habilidad en el que los jugadores deben apilar bloques de madera y luego quitarlos uno por uno sin que la torre se caiga."
+    }
+]
